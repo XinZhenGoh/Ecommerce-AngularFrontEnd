@@ -1,0 +1,98 @@
+<div class="col-md-12">
+  <div class="card card-container">
+<!--    <img-->
+<!--      id="profile-img"-->
+<!--      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"-->
+<!--      class="profile-img-card"-->
+<!--    />-->
+    <form *ngIf="!isSuccessful" name="form" id="signUpForm" (ngSubmit)="signUpForm.form.valid && onSubmit()"
+          #signUpForm=ngForm>
+
+      <div class="form-group">
+        <label for="username">Account Username</label>
+        <input
+          type="text" class="form-control" name="username" id="username"
+          [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel"/>
+        <div class="alert-danger" *ngIf="signUpForm.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+          <div *ngIf="username.errors.minlength">Username must be at least 3 characters</div>
+          <div *ngIf="username.errors.maxlength">Username must be at most 20 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="username">First name</label>
+        <input
+          type="text" class="form-control" name="firstName" id="firstName"
+          [(ngModel)]="form.firstName" required minlength="3" maxlength="20" #firstName="ngModel"/>
+        <div class="alert-danger" *ngIf="signUpForm.submitted && firstName.invalid">
+          <div *ngIf="firstName.errors.required">firstName is required</div>
+          <div *ngIf="firstName.errors.minlength">firstName must be at least 3 characters</div>
+          <div *ngIf="firstName.errors.maxlength">firstName must be at most 20 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input
+          type="text" class="form-control" name="lastName" id="lastName"
+          [(ngModel)]="form.lastName" required minlength="3" maxlength="20" #lastName="ngModel"/>
+        <div class="alert-danger" *ngIf="signUpForm.submitted && lastName.invalid">
+          <div *ngIf="lastName.errors.required">lastName is required</div>
+          <div *ngIf="lastName.errors.minlength">lastName must be at least 3 characters</div>
+          <div *ngIf="lastName.errors.maxlength">lastName must be at most 20 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email" class="form-control" name="email" id="email"
+          [(ngModel)]="form.email" required minlength="3" maxlength="30" #email="ngModel"/>
+        <div class="alert-danger" *ngIf="signUpForm.submitted && email.invalid">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password" class="form-control" name="password" id="password"
+          [(ngModel)]="form.password" required minlength="6" maxlength="20" #password="ngModel"/>
+        <div class="alert-danger" *ngIf="signUpForm.submitted && password.invalid">
+          <div *ngIf="password.errors.required">password is required</div>
+          <div *ngIf="password.errors.password">password must be at least 6 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password2">Reenter password</label>
+        <input
+          type="password" class="form-control" name="password2" id="password2"
+          [(ngModel)]="form.password2" required minlength="6" maxlength="20" #password2="ngModel"/>
+<!--        <div class="alert-danger">-->
+<!--          <div>Password does not match</div>-->
+<!--        </div>-->
+        <div class="alert-danger" *ngIf="signUpForm.submitted && password2.invalid">
+          <div *ngIf="password2.errors.required">password is required</div>
+          <div *ngIf="password2.errors.password2">password must be at least 6 characters</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" form="signUpForm">Register</button>
+      </div>
+
+      <div class="alert alert-warning" *ngIf="signUpForm.submitted && isSignUpFailed">
+        Error occured. Please try again.
+        <br/>
+        {{ errorMessage }}
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Registration was successful!
+    </div>
+  </div>
+</div>

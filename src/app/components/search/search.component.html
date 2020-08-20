@@ -1,0 +1,6 @@
+<div class="container p-3">
+  <input #myInput type="text" value="" placeholder="Search for products..." class="w-25"
+  (keyup.enter)="doSearch(myInput.value)">
+
+  <button (click)="doSearch(myInput.value)">Search</button>
+</div>
