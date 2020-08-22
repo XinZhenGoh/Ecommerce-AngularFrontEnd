@@ -5,8 +5,4 @@ export class Product {
     price: number;
     imageUrl: string;
     unitsInStock: string;
-    dateCreated: Date;
-    lastUpdated: Date;
-
-
 }
