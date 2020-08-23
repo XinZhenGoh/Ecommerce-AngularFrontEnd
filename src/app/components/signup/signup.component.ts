@@ -41,14 +41,7 @@ export class SignupComponent {
     const userSignUpData = new FormData();
 
     userSignUpData.append('imageFile', this.selectedFile, this.selectedFile.name);
-    userSignUpData.append('firstName', this.form.get('firstName').value);
-    userSignUpData.append('lastName', this.form.get('lastName').value);
-    userSignUpData.append('email', this.form.get('email').value);
     userSignUpData.append('username', this.form.get('username').value);
-    userSignUpData.append('city', this.form.get('city').value);
-    userSignUpData.append('state', this.form.get('state').value);
-    userSignUpData.append('zipcode', this.form.get('zipcode').value);
-    userSignUpData.append('phoneNumber', this.form.get('phoneNumber').value);
 
     // Make a call to the Spring Boot Application to save the image
     this.httpClient.post('http://localhost:8090/auth/upload', userSignUpData, {observe: 'response'})

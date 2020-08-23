@@ -1,6 +1,9 @@
-<div class="container p-3">
-  <input #myInput type="text" value="" placeholder="Search for products..." class="w-25"
-  (keyup.enter)="doSearch(myInput.value)">
+<div class="container d-inline">
+  <div class="row">
+    <input #myInput type="text" value="" placeholder="Search for products..." class="w-50 input-group-text"
+           (keyup.enter)="doSearch(myInput.value)">
 
-  <button (click)="doSearch(myInput.value)">Search</button>
+    <button class="btn btn-secondary" (click)="doSearch(myInput.value)">Search</button>
+  </div>
+
 </div>

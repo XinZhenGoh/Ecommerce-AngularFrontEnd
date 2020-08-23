@@ -1,0 +1,8 @@
+<div>
+  <i class="fa fa-shopping-cart"></i>
+  <a class="pl-2" routerLink="/cart-details">
+    <ng-container class="total"> {{totalPrice | currency: 'USD'}}
+    <span>Items: {{totalQuantity}}</span>
+  </ng-container>
+  </a>
+</div>

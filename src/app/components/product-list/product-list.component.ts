@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../services/product.service';
 import {Product} from '../../model/product';
 import {ActivatedRoute} from '@angular/router';
+import {CartItem} from '../../model/cart-item';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -15,7 +17,8 @@ export class ProductListComponent implements OnInit {
   searchMode: boolean;
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private cartService: CartService) {
   }
 
   ngOnInit(): void {
@@ -63,9 +66,7 @@ export class ProductListComponent implements OnInit {
           this.products = data;
         }
       );
-    }
-
-    else {
+    } else {
       this.productService.getProductList('electronics').subscribe(
         data => {
           this.products = data;
@@ -74,4 +75,12 @@ export class ProductListComponent implements OnInit {
     }
   }
 
+  addToCart(product: Product) {
+    console.log(product.itemName);
+
+    const cartItem = new CartItem(product);
+
+    this.cartService.addToCart(cartItem);
+
+  }
 }

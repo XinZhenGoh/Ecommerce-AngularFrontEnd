@@ -14,6 +14,10 @@ import {ProductService} from './services/product.service';
 import {CategoryComponent} from './components/category/category.component';
 import {SearchComponent} from './components/search/search.component';
 import {UpdateProfileComponent} from './components/update-profile/update-profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { CartStatusComponent } from './components/cart-status/cart-status.component';
+import { NagivationComponent } from './components/nagivation/nagivation.component';
+import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {UpdateProfileComponent} from './components/update-profile/update-profile
     ProductListComponent,
     CategoryComponent,
     SearchComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    HomeComponent,
+    CartStatusComponent,
+    NagivationComponent,
+    CartDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,10 +7,10 @@
           <div class="product-box">
             <!--            <img src="{{productList.imageUrl}}" class="img-responsive">-->
             <img src="/assets/images/item.jpg" class="img-responsive" height="100">
-            <h3>{{productList.itemName}}</h3>
-            <div>{{productList.description}}</div>
+            <div class="h3">{{productList.itemName}}</div>
+            <div class="h6">{{productList.description}}</div>
             <div class="price">{{productList.price | currency:'USD'}}</div>
-            <a href="#" class="primary-btn">Add to cart</a>
+            <button (click)="addToCart(productList)" class="btn btn-primary btn-sm">Add to cart</button>
           </div>
         </div>
         <div *ngii="products?.length == 0" class="alert alert-warning col-12" role="alert">

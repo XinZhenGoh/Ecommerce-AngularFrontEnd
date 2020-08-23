@@ -1,0 +1,30 @@
+<div class="container">
+  <ul class="nav nav-pills">
+    <div class="p-3" *ngIf="isLoggedIn">
+      Welcome, {{username}}
+    </div>
+    <div class="p-3">
+      <li><a router routerLink="/home">Home</a></li>
+    </div>
+    <div class="p-3" *ngIf="!isLoggedIn">
+      <li><a routerLink="/signUp">Sign Up</a></li>
+    </div>
+    <div class="p-3" *ngIf="isLoggedIn">
+      <li><a routerLink="/upload">Set Profile Picture</a></li>
+    </div>
+    <div class="p-3" *ngIf="isLoggedIn">
+      <li ><a href="/updateAccount">Update Profile</a></li>
+    </div>
+    <div class="p-3" *ngIf="!isLoggedIn">
+      <li ><a routerLink="/login">Login</a></li>
+    </div>
+    <div class="p-3" *ngIf="isLoggedIn">
+      <li><a  href="" (click)="logout()">Log Out</a></li>
+    </div>
+    <div class="p-3 justify-content-end">
+      <app-cart-status></app-cart-status>
+    </div>
+
+  </ul>
+
+</div>
