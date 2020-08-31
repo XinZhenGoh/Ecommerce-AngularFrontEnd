@@ -30,7 +30,6 @@ export class ProductService {
     return this.getProductsKeyword(searchUrl);
   }
 
-
   // private getProducts(searchUrl: string) {
   //   return this.httpClient.get<GetResponse>(searchUrl).pipe(
   //     map(response => response.)
