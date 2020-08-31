@@ -44,7 +44,7 @@ export class SignupComponent {
     userSignUpData.append('username', this.form.get('username').value);
 
     // Make a call to the Spring Boot Application to save the image
-    this.httpClient.post('http://localhost:8090/auth/upload', userSignUpData, {observe: 'response'})
+    this.httpClient.post('http://localhost:5050/upload', userSignUpData, {observe: 'response'})
       .subscribe((response) => {
           if (response.status === 200) {
             this.message = 'Image uploaded successfully';
@@ -67,7 +67,7 @@ export class SignupComponent {
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
 
     // Make a call to the Spring Boot Application to save the image
-    this.httpClient.post('http://localhost:8090/users/upload', uploadImageData, {observe: 'response'})
+    this.httpClient.post('http://localhost:5050/users/upload', uploadImageData, {observe: 'response'})
       .subscribe((response) => {
           if (response.status === 200) {
             this.message = 'User successfully registered';

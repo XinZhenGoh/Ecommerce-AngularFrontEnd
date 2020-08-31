@@ -10,7 +10,7 @@ import {map} from 'rxjs/operators';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/products';
+  private baseUrl = 'http://localhost:8040/products';
 
   constructor(private httpClient: HttpClient) {
   }

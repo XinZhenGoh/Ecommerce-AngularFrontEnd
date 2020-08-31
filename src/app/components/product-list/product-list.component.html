@@ -6,7 +6,7 @@
         <div *ngFor="let productList of products" class="col-md-3 p-3">
           <div class="product-box">
             <!--            <img src="{{productList.imageUrl}}" class="img-responsive">-->
-            <img src="/assets/images/item.jpg" class="img-responsive" height="100">
+            <img src="https://ecommerceimagestore.s3.us-west-1.amazonaws.com/cat.jpg" class="img-responsive" height="100">
             <div class="h3">{{productList.itemName}}</div>
             <div class="h6">{{productList.description}}</div>
             <div class="price">{{productList.price | currency:'USD'}}</div>
